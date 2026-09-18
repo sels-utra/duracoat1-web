@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message - Duracoat Paints</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button>Menu</button>
+        <div><strong>DURACOAT</strong> Paints</div>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </header>
+
+    <h1>Message Us</h1>
+    <p>Chat with us on WhatsApp for help with products, prices or delivery.</p>
+
+    <br>
+
+    <!-- WhatsApp Button -->
+    <!-- Replace 254700000000 with your real WhatsApp number -->
+    <a href="https://wa.me/254799786897?text=Hello%2C%20I%20need%20help%20with%20Duracoat%20paints" 
+       target="_blank"
+       style="background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block;">
+        Open WhatsApp Chat
+    </a>
+
+    <br><br>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        // Update cart count
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function updateCartCount() {
+            let cart = getCart();
+            let totalItems = 0;
+            cart.forEach(item => totalItems += item.qty);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        updateCartCount();
+    </script>
+
+</body>
+</html>

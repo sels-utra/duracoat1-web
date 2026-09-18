@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Duracoat Paints</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button>Menu</button>
+        <div><strong>DURACOAT</strong> Paints</div>
+        <input type="text" placeholder="Search paints...">
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </header>
+
+    <h1>Store - All Products</h1>
+    <p>Choose the paint you want and add it to cart.</p>
+
+    <!-- Product 1 -->
+    <div>
+        <h3>Duracoat Vinyl Matt Deluxe - 20 Litres</h3>
+        <p>Price: KSh 12,600</p>
+        <button onclick="addToCart('vm-20', 'Duracoat Vinyl Matt Deluxe - 20L', 12600)">
+            Add to Cart
+        </button>
+    </div>
+    <br>
+
+    <!-- Product 2 -->
+    <div>
+        <h3>Duracoat Vinyl Silk Emulsion - 20 Litres</h3>
+        <p>Price: KSh 14,500</p>
+        <button onclick="addToCart('vs-20', 'Duracoat Vinyl Silk Emulsion - 20L', 14500)">
+            Add to Cart
+        </button>
+    </div>
+    <br>
+
+    <!-- Product 3 -->
+    <div>
+        <h3>Duracoat Weathercoat Exterior - 20 Litres</h3>
+        <p>Price: KSh 16,060</p>
+        <button onclick="addToCart('wc-20', 'Duracoat Weathercoat Exterior - 20L', 16060)">
+            Add to Cart
+        </button>
+    </div>
+    <br>
+
+    <!-- Product 4 -->
+    <div>
+        <h3>Duracoat Supergloss Enamel - 4 Litres</h3>
+        <p>Price: KSh 3,200</p>
+        <button onclick="addToCart('sg-4', 'Duracoat Supergloss Enamel - 4L', 3200)">
+            Add to Cart
+        </button>
+    </div>
+    <br>
+
+    <!-- Product 5 -->
+    <div>
+        <h3>Duracoat Real Roc Texture - 25 kg</h3>
+        <p>Price: KSh 5,950</p>
+        <button onclick="addToCart('rr-25', 'Duracoat Real Roc Texture - 25kg', 5950)">
+            Add to Cart
+        </button>
+    </div>
+    <br>
+
+    <!-- Product 6 -->
+    <div>
+        <h3>Duracoat Emulsion Undercoat - 20 Litres</h3>
+        <p>Price: KSh 8,900</p>
+        <button onclick="addToCart('uc-20', 'Duracoat Emulsion Undercoat - 20L', 8900)">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        // ========== CART LOGIC ==========
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function addToCart(id, name, price) {
+            let cart = getCart();
+            let existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    qty: 1
+                });
+            }
+
+            saveCart(cart);
+            alert(name + " added to cart!");
+        }
+
+        function updateCartCount() {
+            let cart = getCart();
+            let totalItems = 0;
+            cart.forEach(item => totalItems += item.qty);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Run when page loads
+        updateCartCount();
+    </script>
+
+</body>
+</html>

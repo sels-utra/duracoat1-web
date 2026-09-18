@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Duracoat Paints</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button>Menu</button>
+        <div><strong>DURACOAT</strong> Paints</div>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </header>
+
+    <h1>Your Cart</h1>
+
+    <!-- Cart items will appear here -->
+    <div id="cartItems"></div>
+
+    <!-- Total -->
+    <h3>Total: KSh <span id="total">0</span></h3>
+
+    <button onclick="clearCart()">Clear Cart</button>
+    <br><br>
+    <button onclick="placeOrder()">Place Order (M-Pesa)</button>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        // ========== CART LOGIC ==========
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showCart();
+        }
+
+        function updateCartCount() {
+            let cart = getCart();
+            let totalItems = 0;
+            cart.forEach(item => totalItems += item.qty);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Show all items in the cart
+        function showCart() {
+            let cart = getCart();
+            let container = document.getElementById('cartItems');
+            let total = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = "<p>Your cart is empty.</p>";
+                document.getElementById('total').textContent = "0";
+                return;
+            }
+
+            let html = "";
+            cart.forEach(item => {
+                let lineTotal = item.price * item.qty;
+                total += lineTotal;
+
+                html += `
+                    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                        <strong>${item.name}</strong><br>
+                        Price: KSh ${item.price.toLocaleString()}<br>
+                        Quantity: 
+                        <button onclick="changeQty('${item.id}', -1)">-</button>
+                        ${item.qty}
+                        <button onclick="changeQty('${item.id}', 1)">+</button>
+                        <br>
+                        Subtotal: KSh ${lineTotal.toLocaleString()}
+                        <br>
+                        <button onclick="removeItem('${item.id}')">Remove</button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            document.getElementById('total').textContent = total.toLocaleString();
+        }
+
+        // Change quantity (+ or -)
+        function changeQty(id, amount) {
+            let cart = getCart();
+            let item = cart.find(i => i.id === id);
+
+            if (item) {
+                item.qty += amount;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+                saveCart(cart);
+            }
+        }
+
+        // Remove one product completely
+        function removeItem(id) {
+            let cart = getCart();
+            cart = cart.filter(i => i.id !== id);
+            saveCart(cart);
+        }
+
+        // Clear everything
+        function clearCart() {
+            localStorage.removeItem('cart');
+            updateCartCount();
+            showCart();
+        }
+
+        // Place order (demo)
+        function placeOrder() {
+            let cart = getCart();
+            if (cart.length === 0) {
+                alert("Cart is empty!");
+                return;
+            }
+            alert("Order placed successfully!\nWe will contact you for M-Pesa payment.\n(This is a demo)");
+            clearCart();
+        }
+
+        // Run when page opens
+        updateCartCount();
+        showCart();
+    </script>
+
+</body>
+</html>
