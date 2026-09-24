@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Duracoat 1 Paints</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            padding-bottom: 90px;
+        }
+
+        .privacy-wrap {
+            background: white;
+            margin: 12px 15px 25px;
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .privacy-wrap h1 {
+            margin: 0 0 16px;
+            font-size: 28px;
+            color: #8B0A14;
+        }
+
+        .privacy-wrap h2 {
+            margin: 18px 0 10px;
+            font-size: 20px;
+            color: #8B0A14;
+        }
+
+        .privacy-wrap p,
+        .privacy-wrap li {
+            margin: 0 0 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .privacy-wrap ul {
+            margin: 0 0 12px 20px;
+            padding-left: 10px;
+        }
+
+        .privacy-wrap strong {
+            color: #333;
+        }
+
+        .privacy-wrap hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 18px 0;
+        }
+
+        @media (min-width: 768px) {
+            .privacy-wrap {
+                max-width: 900px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-button-wrap">
+            <button id="menuBtn" class="menu-icon" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="menuPanel" class="menu-panel">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="brand">
+            <strong>DURACOAT 1</strong> Paints
+        </div>
+
+        <input type="text" placeholder="Search paints...">
+    </header>
+
+    <main>
+        <div class="privacy-wrap">
+            <h1>PRIVACY POLICY FOR DURACOAT 1</h1>
+
+            <p>At <strong>DuraCoat 1</strong>, we are committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, purchase DuraCoat products, or book our painting services in Nakuru and surrounding areas.</p>
+
+            <p>We comply with the <strong>Kenya Data Protection Act, 2019</strong>. By using our platform, you consent to the data practices described in this policy.</p>
+
+            <hr>
+
+            <h2>1. Information We Collect</h2>
+            <p>We collect information that you provide directly to us when registering an account, making a purchase, or requesting a service quote. This includes:</p>
+            <ul>
+                <li><strong>Identity Data:</strong> Full name, billing address, delivery address, and phone number.</li>
+                <li><strong>Transaction Data:</strong> Details about payments made via M-Pesa or bank transfers, and products or services purchased from us.</li>
+                <li><strong>Service Site Data:</strong> Physical location/address of the premises where painting services are to be rendered.</li>
+                <li><strong>Technical Data:</strong> IP address, browser type, and usage data collected automatically via cookies to improve your shopping experience.</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the collected information for the following specific purposes:</p>
+            <ul>
+                <li><strong>Order Fulfillment:</strong> To process your payments, mix your custom DuraCoat colors, and deliver products to your specified location in Nakuru.</li>
+                <li><strong>Service Delivery:</strong> To coordinate with our professional painting teams and access your site for painting projects.</li>
+                <li><strong>Customer Support:</strong> To contact you regarding order updates, stock availability, or scheduling changes.</li>
+                <li><strong>Marketing Communication:</strong> With your explicit consent, to send you promotional offers regarding DuraCoat discounts or new arrivals (you can opt-out at any time).</li>
+            </ul>
+
+            <h2>3. Data Protection and M-Pesa Transaction Safety</h2>
+            <ul>
+                <li><strong>Financial Safety:</strong> We do not store your bank card details or M-Pesa PINs on our servers. All financial transactions are handled securely through licensed third-party payment gateways (e.g., Safaricom Lipa na M-Pesa).</li>
+                <li><strong>Data Security:</strong> We implement appropriate technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</li>
+            </ul>
+
+            <h2>4. Third-Party Sharing</h2>
+            <p>We do not sell, trade, or rent your personal information to third parties. We only share your data with trusted partners necessary to run our business, including:</p>
+            <ul>
+                <li>Delivery riders or third-party courier services within Nakuru to deliver your paint.</li>
+                <li>Legal or regulatory authorities if strictly required by the Laws of the Republic of Kenya.</li>
+            </ul>
+
+            <h2>5. Your Legal Rights</h2>
+            <p>Under the Kenya Data Protection Act, you have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you.</li>
+                <li>Request the correction or deletion of your personal data.</li>
+                <li>Object to the processing of your data for direct marketing purposes.</li>
+            </ul>
+
+            <h2>6. Updates to This Policy</h2>
+            <p>We reserve the right to update this Privacy Policy at any time. Any changes will be posted on this page with an updated "Last Modified" date.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us via our official customer care channels on the website.</p>
+        </div>
+    </main>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+
+        if (menuBtn && menuPanel) {
+            menuBtn.addEventListener('click', function () {
+                menuPanel.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.menu-button-wrap')) {
+                    menuPanel.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

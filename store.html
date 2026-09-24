@@ -10,11 +10,19 @@
 
     <!-- HEADER -->
     <header>
-        <button class="menu-icon" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="menu-button-wrap">
+            <button id="menuBtn" class="menu-icon" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="menuPanel" class="menu-panel">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
         <div class="brand"><strong>DURACOAT</strong> Paints</div>
         <input type="text" placeholder="Search paints...">
         <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
@@ -91,6 +99,21 @@
     </nav>
 
     <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+
+        if (menuBtn && menuPanel) {
+            menuBtn.addEventListener('click', function () {
+                menuPanel.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.menu-button-wrap')) {
+                    menuPanel.classList.remove('show');
+                }
+            });
+        }
+
         // ========== CART LOGIC ==========
 
         function getCart() {

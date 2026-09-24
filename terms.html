@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Duracoat 1 Paints</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            padding-bottom: 90px;
+        }
+
+        .legal-header {
+            padding: 20px 15px 10px;
+        }
+
+        .legal-header p {
+            margin: 0;
+            color: #555;
+        }
+
+        .terms-box {
+            background: white;
+            margin: 12px 15px 20px;
+            padding: 18px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .terms-box h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            color: #8B0A14;
+        }
+
+        .terms-box p,
+        .terms-box li {
+            margin: 0 0 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .terms-box ul {
+            margin: 0 0 12px 20px;
+            padding-left: 10px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 15px 30px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            background-color: #8B0A14;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .terms-box {
+                max-width: 900px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-button-wrap">
+            <button id="menuBtn" class="menu-icon" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="menuPanel" class="menu-panel">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="brand">
+            <strong>DURACOAT 1</strong> Paints
+        </div>
+
+        <input type="text" placeholder="Search paints...">
+    </header>
+
+    <main>
+        <div class="legal-header">
+            <h1>Terms & Conditions</h1>
+            <p>Please read these terms carefully before placing an order with us.</p>
+        </div>
+
+        <section class="terms-box">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using this website and purchasing products from Duracoat 1 Paints, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use our website.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>2. Product Information</h2>
+            <p>We strive to provide accurate product descriptions, prices, and availability. However, colors, finishes, and stock levels may vary. We reserve the right to correct errors or update product information without prior notice.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>3. Orders and Payments</h2>
+            <p>All orders are subject to confirmation and availability. Payment must be completed before products are dispatched. We accept secure payment methods as listed on the checkout page.</p>
+            <ul>
+                <li>Orders are processed once payment has been verified.</li>
+                <li>We reserve the right to refuse or cancel an order if there is a pricing or product issue.</li>
+                <li>Any taxes or shipping charges are shown at checkout if applicable.</li>
+            </ul>
+        </section>
+
+        <section class="terms-box">
+            <h2>4. Delivery and Shipping</h2>
+            <p>Delivery times are estimates only and may vary depending on location, courier schedules, or unforeseen delays. We are not liable for delays caused by third-party logistics providers, weather, or circumstances beyond our control.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>5. Returns and Refunds</h2>
+            <p>Products may be returned only if they are damaged, defective, or incorrect as delivered. Please contact us promptly with your order number and supporting details so we can help resolve the issue.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>6. Privacy and Security</h2>
+            <p>We take reasonable steps to protect your personal information. Your data is used only for order processing, communication, and improving our service. We do not sell your information to third parties.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>7. Limitation of Liability</h2>
+            <p>Duracoat 1 Paints shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the website or purchase of our products, including loss of business, profits, or data.</p>
+        </section>
+
+        <section class="terms-box">
+            <h2>8. Changes to Terms</h2>
+            <p>We may update these Terms & Conditions from time to time. Continued use of the site after changes are made means you accept the updated terms.</p>
+        </section>
+
+        <div class="button-row">
+            <a href="index.html" class="primary-btn">Back to Home</a>
+        </div>
+    </main>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+
+        if (menuBtn && menuPanel) {
+            menuBtn.addEventListener('click', function () {
+                menuPanel.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.menu-button-wrap')) {
+                    menuPanel.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

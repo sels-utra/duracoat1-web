@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Duracoat 1 Paints</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            padding-bottom: 90px;
+        }
+
+        .about-wrap {
+            background: white;
+            margin: 12px 15px 25px;
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-wrap h1 {
+            margin: 0 0 16px;
+            font-size: 28px;
+            color: #8B0A14;
+        }
+
+        .about-wrap p,
+        .about-wrap li {
+            margin: 0 0 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .about-wrap ul {
+            margin: 0 0 12px 20px;
+            padding-left: 10px;
+        }
+
+        .about-wrap strong {
+            color: #333;
+        }
+
+        .about-wrap hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 18px 0;
+        }
+
+        @media (min-width: 768px) {
+            .about-wrap {
+                max-width: 900px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-button-wrap">
+            <button id="menuBtn" class="menu-icon" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="menuPanel" class="menu-panel">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <div class="brand">
+            <strong>DURACOAT 1</strong> Paints
+        </div>
+
+        <input type="text" placeholder="Search paints...">
+    </header>
+
+    <main>
+        <div class="about-wrap">
+            <h1>ABOUT US</h1>
+
+            <p>Welcome to <strong>DuraCoat 1</strong>, your premier online destination for genuine DuraCoat products and professional painting services in Nakuru County and its environs.</p>
+
+            <p>We are dedicated to transforming your residential, commercial, and industrial spaces by bringing high-quality paint products and expert craftsmanship right to your doorstep.</p>
+
+            <hr>
+
+            <h2>Our Mission</h2>
+            <p>To simplify the process of buying paint and hiring professional painters by providing a seamless, reliable, and stress-free online experience for property owners in Nakuru.</p>
+
+            <h2>What We Do</h2>
+            <p>At <strong>DuraCoat 1</strong>, we do more than just sell paint—we provide complete color solutions. Our core offerings include:</p>
+            <ul>
+                <li><strong>Genuine DuraCoat Products:</strong> We supply a wide range of authentic DuraCoat paints, including interior and exterior emulsions, specialized textured finishes, eco-friendly paints, and high-performance primers or undercoats.</li>
+                <li><strong>Custom Color Tinting:</strong> Utilizing advanced automated tinting systems, we mix exact paint shades tailored to your unique preference and design requirements.</li>
+                <li><strong>Professional Painting Services:</strong> Our team consists of highly skilled, vetted, and experienced local painters who ensure flawless surface preparation and top-tier paint application for long-lasting results.</li>
+            </ul>
+
+            <h2>Why Choose DuraCoat 1?</h2>
+            <ul>
+                <li><strong>Based in Nakuru:</strong> We understand the local climate, architectural needs, and community preferences of Nakuru and surrounding areas.</li>
+                <li><strong>Quality Guaranteed:</strong> We strictly stock 100% genuine products from Basco Paints (DuraCoat), ensuring you get the exact durability and coverage you pay for.</li>
+                <li><strong>Convenience:</strong> Save time and transport costs by browsing our catalog, placing your order via M-Pesa, and having the paint delivered directly to your site.</li>
+                <li><strong>End-to-End Service:</strong> From helping you choose the right paint type to deploying our professional application crew, we handle the entire project from start to finish.</li>
+            </ul>
+
+            <p>Thank you for choosing <strong>DuraCoat 1</strong>. Let us bring color and durability to your walls!</p>
+        </div>
+    </main>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="message.html">Message</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+
+        if (menuBtn && menuPanel) {
+            menuBtn.addEventListener('click', function () {
+                menuPanel.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.menu-button-wrap')) {
+                    menuPanel.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
