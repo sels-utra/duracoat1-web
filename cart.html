@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Duracoat Paints</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <button>Menu</button>
-        <div><strong>DURACOAT</strong> Paints</div>
+        <button class="menu-icon" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="brand"><strong>DURACOAT</strong> Paints</div>
         <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
     </header>
 
@@ -31,7 +36,7 @@
         <a href="index.html">Home</a>
         <a href="store.html">Store</a>
         <a href="message.html">Message</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart.html" class="active">Cart</a>
     </nav>
 
     <script>
